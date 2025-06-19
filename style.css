@@ -14,7 +14,6 @@ body {
   color: #fff;
   padding: 30px;
 }
-
 .container {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(14px);
@@ -35,7 +34,6 @@ body {
     box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
   }
 }
-
 h1 {
   text-align: center;
   color: #00ffff;
@@ -43,7 +41,6 @@ h1 {
   text-shadow: 0 0 12px #00ffffaa;
   font-size: 1.8rem;
 }
-
 label {
   display: block;
   margin-bottom: 6px;
@@ -52,7 +49,6 @@ label {
   font-size: 0.95rem;
   margin-top: 15px;
 }
-
 input, select {
   width: 100%;
   padding: 12px;
@@ -72,6 +68,15 @@ input:focus, select:focus {
   background-color: #022b44;
 }
 
+/* Select Arrow Customization */
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="cyan" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+  padding-right: 30px;
+}
 .result {
   font-size: 1.05rem;
   color: #d0f9ff;
@@ -79,7 +84,6 @@ input:focus, select:focus {
   padding: 10px 0 5px 5px;
   font-weight: 500;
 }
-
 .toggle-wrapper {
   margin-top: 18px;
   display: flex;
@@ -131,13 +135,4 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
-}
-select {
-  appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="cyan" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position-x: 98%;
-  background-position-y: 50%;
-  padding-right: 30px;
-  background-color: #011a2d;
 }
