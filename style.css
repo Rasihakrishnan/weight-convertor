@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at center, #001f3f, #000814);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  background: linear-gradient(135deg, #1f2e3b, #0a192f);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  border: 1px solid #0ff;
+  animation: pulse 8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1);
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+  color: #aff;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #0ff;
+  background-color: #001a33;
+  color: #0ff;
+  outline: none;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+input[type="number"]:focus {
+  box-shadow: 0 0 10px #0ff;
+}
+
+.result {
+  font-size: 1.1rem;
+  color: #bbf;
+  margin-top: 10px;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.toggle-wrapper span {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
