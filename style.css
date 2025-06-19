@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,92 +6,81 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Background & Centering */
 body {
-  background: radial-gradient(circle at center, #001f3f, #000814);
-  height: 100vh;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   color: #fff;
-  overflow: hidden;
 }
 
+/* Container Glass Effect */
 .container {
-  background: linear-gradient(135deg, #1f2e3b, #0a192f);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-  border: 1px solid #0ff;
-  animation: pulse 8s infinite;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  width: 100%;
+  max-width: 500px;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
-  }
-}
-
-.glass-panel {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1);
-  min-width: 300px;
-}
-
+/* Title */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff;
+  color: #00ffff;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #00ffffaa;
 }
 
+/* Labels */
 label {
-  font-weight: 600;
-  margin-bottom: 10px;
   display: block;
-  color: #aff;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #aefaff;
 }
 
-input[type="number"] {
+/* Inputs & Select */
+input, select {
   width: 100%;
   padding: 12px;
-  font-size: 1rem;
   border-radius: 10px;
-  border: 1px solid #0ff;
-  background-color: #001a33;
-  color: #0ff;
+  border: 1px solid #00ffff;
+  background-color: #001f2e;
+  color: #00f9ff;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
   outline: none;
-  margin-bottom: 20px;
-  transition: 0.3s;
+  box-shadow: 0 0 10px #00ffff;
 }
 
-input[type="number"]:focus {
-  box-shadow: 0 0 10px #0ff;
-}
-
+/* Result Box */
 .result {
-  font-size: 1.1rem;
-  color: #bbf;
+  font-size: 1rem;
+  color: #b0f8ff;
   margin-top: 10px;
+  padding-left: 5px;
 }
 
+/* Toggle Switch Styling */
 .toggle-wrapper {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  color: #ddd;
+  font-size: 0.95rem;
 }
 
-.toggle-wrapper span {
-  font-size: 0.9rem;
-  color: #ccc;
-}
 .switch {
   position: relative;
   display: inline-block;
@@ -107,4 +97,29 @@ input[type="number"]:focus {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #888;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: #002c3e;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00ffff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
